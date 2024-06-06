@@ -8,6 +8,9 @@ class Mainscreen extends StatefulWidget {
 }
 
 class _MainscreenState extends State<Mainscreen> {
+  void getData() {
+    //get data from the API
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +18,7 @@ class _MainscreenState extends State<Mainscreen> {
         centerTitle: true,
         title: Text("Bucket List"),
       ),
+      body: ElevatedButton(onPressed: getData, child: Text("Get Data")),
     );
   }
 }
