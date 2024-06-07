@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class Mainscreen extends StatefulWidget {
@@ -8,9 +9,13 @@ class Mainscreen extends StatefulWidget {
 }
 
 class _MainscreenState extends State<Mainscreen> {
-  void getData() {
+  Future<void> getData() async {
     //get data from the API
+    var response = await Dio().get(
+        "https://flutterapitest123-d1627-default-rtdb.firebaseio.com/bucketlist.json");
+    print(response);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
